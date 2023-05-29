@@ -2,18 +2,26 @@ package com.example.hauntedhaven.ui.theme
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,14 +50,22 @@ fun ListingsPage(modifier: Modifier = Modifier){
         Listing("Leap Castle", "Offaly, Ireland", category = listingCategory.CASTLES_MANSIONS, image = R.drawable.leap_website)
     )
 
-    LazyColumn(modifier = Modifier.padding(horizontal = 17.dp)){
-        items(listings) {
-                listing -> ListingItem(listing)
-        }
+        Box(
+            modifier = Modifier.background(PhantomBlack)
+        ) {
+            Column() {
+                TopBar(title = "Listings", onMenuClick = { /*TODO*/ })
+                LazyColumn(modifier = Modifier.padding(horizontal = 17.dp)) {
+                    items(listings) { listing ->
+                        ListingItem(listing)
+                    }
 
+                }
+            }
+
+        }
     }
 
-}
 
 @Composable
 fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
@@ -57,13 +73,11 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
     ) {
-
         Row(
-            modifier = Modifier.padding(vertical = 8.dp),
+            modifier = Modifier.padding(vertical = 8.dp) ,
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
                 painter = painter, contentDescription = null, modifier = Modifier.size(96.dp),
@@ -72,8 +86,9 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
             Box(
                 modifier = Modifier.padding(top = 20.dp)
             ) {
-                Row {
-                    Column(modifier = Modifier.fillMaxSize()) {
+                Row(
+                ) {
+                    Column() {
                         Text(
                             text = listing.title,
                             style = MaterialTheme.typography.titleMedium,
@@ -92,6 +107,44 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+fun TopBar(
+    title: String,
+    onMenuClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        Modifier.fillMaxWidth()
+    ) {
+
+        Box(
+            modifier = Modifier.fillMaxWidth()
+                .background(GhostWhite)
+                .height(70.dp)
+        ) {
+            IconButton(onClick = { /*TODO*/ },
+            modifier = Modifier.align(Alignment.CenterStart)) {
+                Image(
+                    painter = painterResource(id = R.drawable.hamburger_icon_svg),
+                    contentDescription = "Logo",
+                    modifier = Modifier.size(30.dp).background(GhostWhite)
+                )
+            }
+
+            Image(
+                painter = painterResource(id = R.drawable.hauntedghostwhite),
+                contentDescription = "logo",
+                modifier = Modifier.align(Alignment.Center).size(900.dp)
+            )
+
+        }
+
+    }
+}
+
+
+
 
 @Preview(showBackground = true)
 @Composable
