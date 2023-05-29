@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -74,22 +75,20 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
             .fillMaxSize()
     ) {
         Row(
-            modifier = Modifier.padding(vertical = 8.dp),
+            modifier = Modifier.padding(vertical = 8.dp) ,
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+            Image(
+                painter = painter, contentDescription = null, modifier = Modifier.size(96.dp),
+                contentScale = ContentScale.Crop
+            )
             Box(
                 modifier = Modifier.padding(top = 20.dp)
             ) {
-                Image(
-                    painter = painter, contentDescription = null, modifier = Modifier.size(96.dp),
-                    contentScale = ContentScale.Crop
-                )
                 Row(
                 ) {
-                    Column(
-                        modifier = Modifier.padding(bottom = 15.dp)
-                    ) {
+                    Column() {
                         Text(
                             text = listing.title,
                             style = MaterialTheme.typography.titleMedium,
@@ -99,7 +98,7 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
                         Text(
                             text = listing.location,
                             style = MaterialTheme.typography.bodySmall,
-                            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+                            modifier = Modifier.padding(16.dp),
                             color = Color.White
                         )
                     }
@@ -121,21 +120,22 @@ fun TopBar(
 
         Box(
             modifier = Modifier.fillMaxWidth()
-                .background(PhantomBlack)
+                .background(GhostWhite)
+                .height(70.dp)
         ) {
             IconButton(onClick = { /*TODO*/ },
             modifier = Modifier.align(Alignment.CenterStart)) {
                 Image(
-                    painter = painterResource(id = R.drawable.burgir),
+                    painter = painterResource(id = R.drawable.hamburger_icon_svg),
                     contentDescription = "Logo",
-                    modifier = Modifier.size(50.dp).background(PhantomBlack)
+                    modifier = Modifier.size(30.dp).background(GhostWhite)
                 )
             }
 
             Image(
-                painter = painterResource(id = R.drawable.phatonhaven),
+                painter = painterResource(id = R.drawable.hauntedghostwhite),
                 contentDescription = "logo",
-                modifier = Modifier.align(Alignment.Center)
+                modifier = Modifier.align(Alignment.Center).size(900.dp)
             )
 
         }
