@@ -14,7 +14,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.hauntedhaven.ui.theme.HauntedHavenTheme
 import com.example.hauntedhaven.ui.theme.HomeScreen
-import com.example.hauntedhaven.ui.theme.ListingScreen
+import com.example.hauntedhaven.ui.theme.ListingsPage
 import com.example.hauntedhaven.ui.theme.SetupNavGraph
 
 class MainActivity : ComponentActivity() {

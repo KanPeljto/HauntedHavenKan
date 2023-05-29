@@ -18,8 +18,8 @@ fun SetupNavGraph(
         composable(route = Screen.HomeScreen.route){
             HomeScreen(navController=navController)
         }
-        composable(route = Screen.ListingScreen.route){
-            ListingScreen()
+        composable(route = Screen.ListingsPage.route){
+            ListingsPage()
         }
     }
 

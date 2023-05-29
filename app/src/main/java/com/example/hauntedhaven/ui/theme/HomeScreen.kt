@@ -254,7 +254,7 @@ fun viewAllListings(
     ) {
         Button(onClick =
         {
-        navController.navigate(Screen.ListingScreen.route)
+        navController.navigate(Screen.ListingsPage.route)
 
         }
             ,colors = ButtonDefaults.buttonColors(BloodRed)) {
