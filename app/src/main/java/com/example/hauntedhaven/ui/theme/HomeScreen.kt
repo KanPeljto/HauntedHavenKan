@@ -96,6 +96,7 @@ fun GreetingSection() {
 
 
     ) {
+
         Image(
             painter = painterResource(id = R.drawable.logohh2) ,
             contentDescription ="Logo",
@@ -165,11 +166,11 @@ Column( modifier = Modifier
             .padding(17.dp)
 
     ) {
-        Image(painter = painterResource(id = R.drawable.logohh2), contentDescription ="AA", Modifier.size(120.dp)
+        Image(painter = painterResource(id = R.drawable.leap_website), contentDescription ="Leap Castle", Modifier.size(120.dp)
         )
         
         Text(
-            text = "Haunted mansion located within....",
+            text = "....",
             color= GhostWhite,
             fontFamily = FontFamily(Font(R.font.gothic)),
         modifier = Modifier
@@ -183,7 +184,7 @@ Column( modifier = Modifier
         modifier = Modifier.padding(17.dp)
     ) {
         Image(painter = painterResource(
-            id = R.drawable.hauntedhouse1), 
+            id = R.drawable.llhouseof7gables_jpg),
             contentDescription ="Haunted House 1",Modifier.size(120.dp) )
         Text(text = "Haunted house located in far...",color= GhostWhite, fontFamily = FontFamily(Font(R.font.gothic)),
         modifier = Modifier
@@ -205,7 +206,7 @@ Column( modifier = Modifier
         modifier = Modifier.padding(17.dp)
     ) {
         Image(painter = painterResource(
-            id = R.drawable.hauntedhouse2),
+            id = R.drawable.hauntedchangi_main),
             contentDescription ="Haunted House 2",Modifier.size(120.dp) )
         Text(
             text = "This spooky hotel also offers a B&B..",

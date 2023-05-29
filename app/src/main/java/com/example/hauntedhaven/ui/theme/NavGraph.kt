@@ -16,7 +16,7 @@ fun SetupNavGraph(
         startDestination = Screen.HomeScreen.route
     ){
         composable(route = Screen.HomeScreen.route){
-            HomeScreen(navController=navController)
+            DetailedLayout(navController=navController)
         }
         composable(route = Screen.ListingsPage.route){
             ListingsPage()
@@ -25,3 +25,4 @@ fun SetupNavGraph(
 
     
 }
+
