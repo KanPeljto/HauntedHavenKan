@@ -2,6 +2,7 @@ package com.example.hauntedhaven.ui.theme
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -72,19 +74,22 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
             .fillMaxSize()
     ) {
         Row(
-            modifier = Modifier.padding(vertical = 8.dp) ,
+            modifier = Modifier.padding(vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(
-                painter = painter, contentDescription = null, modifier = Modifier.size(96.dp),
-                contentScale = ContentScale.Crop
-            )
             Box(
                 modifier = Modifier.padding(top = 20.dp)
             ) {
-                Row {
-                    Column() {
+                Image(
+                    painter = painter, contentDescription = null, modifier = Modifier.size(96.dp),
+                    contentScale = ContentScale.Crop
+                )
+                Row(
+                ) {
+                    Column(
+                        modifier = Modifier.padding(bottom = 15.dp)
+                    ) {
                         Text(
                             text = listing.title,
                             style = MaterialTheme.typography.titleMedium,
@@ -94,7 +99,7 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier) {
                         Text(
                             text = listing.location,
                             style = MaterialTheme.typography.bodySmall,
-                            modifier = Modifier.padding(16.dp),
+                            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
                             color = Color.White
                         )
                     }
