@@ -16,13 +16,37 @@ fun SetupNavGraph(
         startDestination = Screen.HomeScreen.route
     ){
         composable(route = Screen.HomeScreen.route){
-            DetailedLayout(navController=navController)
+            HomeScreen(navController=navController)
         }
         composable(route = Screen.ListingsPage.route){
-            ListingsPage()
+            ListingsPage(navController = navController)
+
+
         }
+        composable(route = Screen.DetailedScreen.route){
+            DetailedLayout(navController = navController)
+        }
+
+
     }
 
+    
+}
+
+@Composable
+fun SetupNavGraph2(
+    navController: NavHostController
+) {
+    NavHost(
+        navController =navController ,
+        startDestination = Screen.ListingsPage.route){
+        composable(route = Screen.ListingsPage.route){
+            ListingsPage(navController=navController)
+        }
+        composable(route = Screen.DetailedScreen.route){
+            DetailedLayout(navController = navController)
+        }
+    }
     
 }
 
