@@ -1,11 +1,15 @@
 package com.example.hauntedhaven.ui.theme
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hauntedhaven.Screen
+import detailedListings.DetailedLayout
+import detailedListings.DetailedLayoutChangi
+import detailedListings.DetailedLayoutGables
+import detailedListings.DetailedLayoutLeapCastle
+import detailedListings.DetailedLayoutTowerOfLondon
 
 @Composable
 fun SetupNavGraph(
@@ -26,6 +30,22 @@ fun SetupNavGraph(
         composable(route = Screen.DetailedScreen.route){
             DetailedLayout(navController = navController)
         }
+        composable(route = Screen.DetailedScreenLeap.route){
+            DetailedLayoutLeapCastle(navController = navController)
+        }
+        composable(route = Screen.DetailedScreenGables.route){
+            DetailedLayoutGables(navController = navController)
+
+        }
+        composable(route=Screen.DetailedScreenChangi.route){
+            DetailedLayoutChangi(navController = navController)
+
+        }
+        composable(route =Screen.DetailedScreenTowerOfLondon.route){
+            DetailedLayoutTowerOfLondon(navController = navController)
+        }
+        
+        
 
 
     }

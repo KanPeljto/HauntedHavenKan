@@ -39,17 +39,12 @@ import com.example.hauntedhaven.Screen
 fun ListingsPage(modifier: Modifier = Modifier, navController: NavController){
     val hauntedHaven = painterResource(id =R.drawable.screenshot_2023_05_28_at_20_30_06)
     val listings = listOf(
-        Listing("Eastern State Penitentiary", "Pennsylvania, USA", image = R.drawable.eastern_state_penitentiary__philadelphia__pennsylvania_lccn2011632222_tif, listingCategory.PENITENTIARY_PHANTOMS),
-        Listing("The Tower of London", "England", image = R.drawable.keep_white_tower_jpg, listingCategory.PENITENTIARY_PHANTOMS),
-        Listing("St. Albans Sanatorium", "Virginia, USA", category = listingCategory.SCHOOLS_HOSPITALS, image= R.drawable._77_0046_stalbanshospital_2019_exterior_front_elevation_vlr_online),
-        Listing("Old Changi Hospital", "Singapore", category = listingCategory.SCHOOLS_HOSPITALS, image = R.drawable.hauntedchangi_main),
-        Listing("Stanley Hotel", "Colorado, USA", category = listingCategory.HOTELS, image = R.drawable.stanleyhotel0915_maze_92ef1d5afd9445208830d68702895817),
-        Listing("Hotel Burchianti", "Florence, Italy", category = listingCategory.HOTELS, image = R.drawable._7940556),
-        Listing("Winchester Mystery House", "California, USA", category = listingCategory.HOUSES, image = R.drawable.dji_0136_scaled_1),
-        Listing("The House of the Seven Gables", "Massachusetts, USA", category = listingCategory.HOUSES, image = R.drawable.llhouseof7gables_jpg),
-        Listing("Chillingham Castle", "Northumberland, England", category = listingCategory.CASTLES_MANSIONS, image = R.drawable.chillingham_castle_stormy_external_1442x760),
-        Listing("Leap Castle", "Offaly, Ireland", category = listingCategory.CASTLES_MANSIONS, image = R.drawable.leap_website)
-    )
+        Listing("Eastern State Penitentiary", "Pennsylvania, USA", image = R.drawable.eastern_state_penitentiary__philadelphia__pennsylvania_lccn2011632222_tif, listingCategory.PENITENTIARY_PHANTOMS,routee="detailed_screen"),
+        Listing("Leap Castle","Ireland", image = R.drawable.leap_website,listingCategory.CASTLES_MANSIONS,routee="leap_castle"),
+        Listing("House of the seven gables","Massachusetts", image = R.drawable.llhouseof7gables_jpg,listingCategory.HOUSES,"house_of_gables"),
+        Listing("The old Changi hospital","Singapore,Singapore", image = R.drawable.hauntedchangi_main,listingCategory.SCHOOLS_HOSPITALS,"changi"),
+        Listing("The old tower of London","London, United Kingdom",image=R.drawable.keep_white_tower_jpg,listingCategory.CASTLES_MANSIONS,"tower_of_london")
+        )
 
     LazyColumn(modifier = Modifier.padding(horizontal = 17.dp)){
         items(listings) {
@@ -83,7 +78,7 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier,navController: N
                 painter = painter, contentDescription = null,
                 modifier = Modifier
                     .size(96.dp)
-                    .clickable { navController.navigate(Screen.DetailedScreen.route) },
+                    .clickable { navController.navigate(listing.routee) },
                 contentScale = ContentScale.Crop
             )
             Box(

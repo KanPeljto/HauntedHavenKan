@@ -73,7 +73,7 @@ fun HomeScreen(
         LazyColumn() {
             item {
                 GreetingSection();
-                FeaturedSection();
+                FeaturedSection(navController=navController);
                 viewAllListings(navController = navController)
             }
 
@@ -146,9 +146,13 @@ var selectedBitIndex by remember {
 
 
 @Composable
-fun FeaturedSection() {
+fun FeaturedSection(
+    navController: NavController
+) {
 Column( modifier = Modifier
-    .fillMaxWidth(),
+    .fillMaxWidth()
+    .padding(top = 17.dp)
+    .padding(bottom = 17.dp),
     horizontalAlignment = Alignment.CenterHorizontally
     ) {
     Text(
@@ -159,77 +163,95 @@ Column( modifier = Modifier
     modifier = Modifier
         .padding(15.dp)
     )
-    }
 
-    Row(
-        horizontalArrangement = Arrangement.Start,
+    Image(painter = painterResource(id = R.drawable.leap_website),
+        contentDescription ="Leap Castle",
         modifier=Modifier
-            .padding(17.dp)
+            .size(150.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenLeap.route) }
 
-    ) {
-        Image(painter = painterResource(id = R.drawable.leap_website), contentDescription ="Leap Castle", Modifier.size(120.dp)
-        )
-        
-        Text(
-            text = "....",
-            color= GhostWhite,
-            fontFamily = FontFamily(Font(R.font.gothic)),
+    )
+
+    Text(
+        text = "Name: Leap Castle",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
         modifier = Modifier
-            .size(width = 100.dp, height = 50.dp)
             .padding(start = 10.dp)
-            )
-
-    }
-    
-    Row(horizontalArrangement = Start,
-        modifier = Modifier.padding(17.dp)
-    ) {
-        Image(painter = painterResource(
-            id = R.drawable.llhouseof7gables_jpg),
-            contentDescription ="Haunted House 1",Modifier.size(120.dp) )
-        Text(text = "Haunted house located in far...",color= GhostWhite, fontFamily = FontFamily(Font(R.font.gothic)),
+            .clickable { navController.navigate(Screen.DetailedScreenLeap.route) }
+    )
+    Text(
+        text = "Location: Pennsylvania,USA",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
         modifier = Modifier
-            .size(width = 100.dp, height = 50.dp)
-            .padding(start = 10.dp));
+            .padding(start = 10.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenLeap.route) }
+    )
 
-        LazyRow(){
-            item {
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.DarkGray)){
-                    Text(text = "abandoned")}
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Red)){
-                    Text(text = "haunted") }
 
-            }
-        }
+
+    Image(painter = painterResource(
+        id = R.drawable.llhouseof7gables_jpg),
+        contentDescription ="Haunted House 1",
+        modifier=Modifier
+            .size(120.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenGables.route) }
+
+        )
+
+    Text(
+        text = "Name: House of the seven gables",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
+        modifier = Modifier
+            .padding(start = 10.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenGables.route) }
+    )
+    Text(
+        text = "Location: Massachusetts,USA",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
+        modifier = Modifier
+            .padding(start = 10.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenGables.route) }
+    )
+
+
+
+
+    Image(painter = painterResource(
+        id = R.drawable.hauntedchangi_main),
+        contentDescription ="Changi hospital",
+        Modifier
+            .size(120.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenChangi.route) })
+    Text(
+        text = "Name: Old changi hospital",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
+        modifier = Modifier
+            .padding(start = 10.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenGables.route) }
+    )
+    Text(
+        text = "Location: Singapore, Republic of Singapore",
+        color= GhostWhite,
+        fontFamily = FontFamily(Font(R.font.gothic)),
+        modifier = Modifier
+            .padding(start = 10.dp)
+            .clickable { navController.navigate(Screen.DetailedScreenGables.route) }
+    )
     }
 
-    Row(horizontalArrangement = Start,
-        modifier = Modifier.padding(17.dp)
-    ) {
-        Image(painter = painterResource(
-            id = R.drawable.hauntedchangi_main),
-            contentDescription ="Haunted House 2",Modifier.size(120.dp) )
-        Text(
-            text = "This spooky hotel also offers a B&B..",
-            color= GhostWhite,
-            fontFamily = FontFamily(Font(R.font.gothic)),
-            modifier = Modifier
-                .size(width = 100.dp, height = 50.dp)
-                .padding(start = 10.dp))
 
 
-        LazyRow(){
-            item {
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(halloweenOrange)){
-                    Text(text = "spooky B&B")}
-                    Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Red)){
-                        Text(text = "haunted") }
 
-                }
-            }
-    }
 
 }
+
+
+
 
 @Composable
 fun viewAllListings(
