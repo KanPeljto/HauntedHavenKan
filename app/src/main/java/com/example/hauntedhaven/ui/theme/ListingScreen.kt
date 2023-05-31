@@ -43,7 +43,8 @@ fun ListingsPage(modifier: Modifier = Modifier, navController: NavController){
         Listing("Leap Castle","Ireland", image = R.drawable.leap_website,listingCategory.CASTLES_MANSIONS,routee="leap_castle"),
         Listing("House of the seven gables","Massachusetts", image = R.drawable.llhouseof7gables_jpg,listingCategory.HOUSES,"house_of_gables"),
         Listing("The old Changi hospital","Singapore,Singapore", image = R.drawable.hauntedchangi_main,listingCategory.SCHOOLS_HOSPITALS,"changi"),
-        Listing("The old tower of London","London, United Kingdom",image=R.drawable.keep_white_tower_jpg,listingCategory.CASTLES_MANSIONS,"tower_of_london")
+        Listing("The old tower of London","London, United Kingdom",image=R.drawable.keep_white_tower_jpg,listingCategory.CASTLES_MANSIONS,"tower_of_london"),
+        Listing("Stanley Hotel","Colorado, United States", image = R.drawable.stanleyhotel0915_maze_92ef1d5afd9445208830d68702895817,listingCategory.HOTELS,"stanley_hotel")
         )
 
     LazyColumn(modifier = Modifier.padding(horizontal = 17.dp)){

@@ -46,7 +46,7 @@ fun DetailedLayoutTowerOfLondon(
                     id = R.drawable.whitearrow2),
                     contentDescription ="back",
                 modifier= Modifier
-                    .clickable { navController.navigate(Screen.HomeScreen.route) }
+                    .clickable { navController.navigate(Screen.ListingsPage.route) }
                     .size(40.dp))
 
                 Image(painter = painterResource(id = R.drawable.logohh2), contentDescription ="logo")

@@ -9,6 +9,7 @@ import detailedListings.DetailedLayout
 import detailedListings.DetailedLayoutChangi
 import detailedListings.DetailedLayoutGables
 import detailedListings.DetailedLayoutLeapCastle
+import detailedListings.DetailedLayoutStanleyHotel
 import detailedListings.DetailedLayoutTowerOfLondon
 
 @Composable
@@ -43,6 +44,10 @@ fun SetupNavGraph(
         }
         composable(route =Screen.DetailedScreenTowerOfLondon.route){
             DetailedLayoutTowerOfLondon(navController = navController)
+        }
+        
+        composable(route=Screen.DetailedScreenStanleyHotel.route){
+            DetailedLayoutStanleyHotel(navController = navController)
         }
         
         
