@@ -60,23 +60,19 @@ fun DetailedLayoutGables(
                         .size(400.dp)
                         .background(PhantomBlack))
                     
-                    Image(painter = painterResource(id = R.drawable.esp2) ,
+                    Image(painter = painterResource(id = R.drawable.gables2) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-                    Image(painter = painterResource(id = R.drawable.esp3) ,
+                    Image(painter = painterResource(id = R.drawable.gables3) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-                    Image(painter = painterResource(id = R.drawable.esp4) ,
-                        contentDescription ="ESP4",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
+
                 }
             }
             DescriptionGables()

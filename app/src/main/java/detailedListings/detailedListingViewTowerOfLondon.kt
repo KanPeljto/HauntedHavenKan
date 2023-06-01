@@ -54,29 +54,24 @@ fun DetailedLayoutTowerOfLondon(
             }
             LazyRow(){
                 item {
-                    Image(painter = painterResource(id = R.drawable.hauntedchangi_main),
+                    Image(painter = painterResource(id = R.drawable.london2),
                         contentDescription ="ESP",
                     modifier= Modifier
                         .size(400.dp)
                         .background(PhantomBlack))
                     
-                    Image(painter = painterResource(id = R.drawable.esp2) ,
+                    Image(painter = painterResource(id = R.drawable.london3) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-                    Image(painter = painterResource(id = R.drawable.esp3) ,
+                    Image(painter = painterResource(id = R.drawable.london4) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-                    Image(painter = painterResource(id = R.drawable.esp4) ,
-                        contentDescription ="ESP4",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
                 }
             }
             DescriptionTowerOfLondon()
