@@ -15,4 +15,8 @@ sealed class Screen(val route: String){
     object DetailedScreenTowerOfLondon:Screen("tower_of_london")
 
     object DetailedScreenStanleyHotel:Screen("stanley_hotel")
+
+    object DetailedScreenAlbansHospital:Screen("albans_hospital")
+
+    object DetailedScreenChillingham:Screen("chillingham_castle")
 }
