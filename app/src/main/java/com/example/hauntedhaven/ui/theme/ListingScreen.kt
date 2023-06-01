@@ -85,7 +85,9 @@ fun ListingItem(listing: Listing, modifier: Modifier = Modifier,navController: N
                 contentScale = ContentScale.Crop
             )
             Box(
-                modifier = Modifier.padding(top = 20.dp)
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .clickable { navController.navigate(listing.routee) }
             ) {
                 Row {
                     Column(modifier = Modifier.fillMaxSize()) {
