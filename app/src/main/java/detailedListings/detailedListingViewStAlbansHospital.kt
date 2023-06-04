@@ -86,7 +86,7 @@ fun DescriptionStAlbansHospital() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Location: London, United Kingdom")
+                text = "Location: Virginia, USA")
             Text(
                 fontFamily = FontFamily(Font(R.font.gothic)),
                 color = GhostWhite,
@@ -94,9 +94,7 @@ fun DescriptionStAlbansHospital() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Once considered among the royal palaces, the Tower of London is most known as a political prison and a place of execution. "
-                        + "\n" +
-                        "Its history goes all the way back to William I the Conqueror who began to erect fortifications on the site immediately after his coronation on Christmas 1066."
+                text = "St. Albans Sanatorium, located in Radford, VA, shut its doors in the early 1990s after a century of abuse and terror. Actually, the terror began even earlier, during the American colonial period when the Draper's Meadow Massacre occurred on the very site that would one day be a boy's school and later a mental hospital. It seems that almost every city and town the world over has some claim to paranormal fame. But, few could come close to matching the amount of ghostly activity that has been recorded and reported at the haunted St. Albans, one of the most haunted places in Virginia and, perhaps, the entire country."
             )
             
         }

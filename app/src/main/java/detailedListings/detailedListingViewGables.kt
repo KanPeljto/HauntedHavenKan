@@ -94,7 +94,7 @@ fun DescriptionGables() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Location: Massachusetts")
+                text = "Location: Massachusetts,USA")
             Text(
                 fontFamily = FontFamily(Font(R.font.gothic)),
                 color = GhostWhite,

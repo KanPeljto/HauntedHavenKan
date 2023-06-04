@@ -102,7 +102,7 @@ fun DescriptionChillinghamCastle() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Location: London, United Kingdom")
+                text = "Location: Northumberland, United Kingdom")
             Text(
                 fontFamily = FontFamily(Font(R.font.gothic)),
                 color = GhostWhite,
@@ -110,9 +110,14 @@ fun DescriptionChillinghamCastle() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Once considered among the royal palaces, the Tower of London is most known as a political prison and a place of execution. "
-                        + "\n" +
-                        "Its history goes all the way back to William I the Conqueror who began to erect fortifications on the site immediately after his coronation on Christmas 1066."
+                text = "HAUNTED CHILLINGHAM – ARE YOU BRAVE ENOUGH?\n" +
+                        "\n" +
+                        "Chillingham Castle boasts some of the highest levels of paranormal activity in the country, with a large collection of spectres and apparitions spotted by visitors over the years.\n" +
+                        "\n" +
+                        "The poet Longfellow begins an apt description of Chillingham with the following verse:\n" +
+                        "”All houses in which men have lived and died are haunted houses:\n" +
+                        "Through the open doors the harmless phantoms on their errands glide,\n" +
+                        "with feet that make no sounds upon the floors.”"
             )
             
         }
