@@ -46,7 +46,9 @@ fun DetailedLayoutTowerOfLondon(
                     navController = navController
                 )
                 LazyRow() {
+
                     item {
+
                         Image(
                             painter = painterResource(id = R.drawable.london2),
                             contentDescription = "ESP",

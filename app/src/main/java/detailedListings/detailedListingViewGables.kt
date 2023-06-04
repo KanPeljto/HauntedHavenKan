@@ -34,39 +34,45 @@ import com.example.hauntedhaven.ui.theme.TopBarDetailed
 fun DetailedLayoutGables(
     navController: NavController
 ) {
-    LazyColumn(
-        modifier=Modifier.background(PhantomBlack)
-    ){
-        item {
-            TopBarDetailed(title = "Gables", navController = navController)
+    Box(
+        modifier = Modifier.background(PhantomBlack).fillMaxSize()
+    ) {
+        LazyColumn(
+            modifier = Modifier.background(PhantomBlack)
+        ) {
+            item {
+                TopBarDetailed(
+                    title = "House of Gables",
+                    navController = navController
+                )
+                LazyRow() {
 
-            LazyRow(){
-                item {
-                    Image(painter = painterResource(id = R.drawable.llhouseof7gables_jpg),
-                        contentDescription ="ESP",
-                    modifier= Modifier
-                        .size(400.dp)
-                        .background(PhantomBlack))
-                    
-                    Image(painter = painterResource(id = R.drawable.gables2) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
+                    item {
 
-                    Image(painter = painterResource(id = R.drawable.gables3) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
+                        Image(
+                            painter = painterResource(id = R.drawable.gables2),
+                            contentDescription = "ESP",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
+
+                        Image(
+                            painter = painterResource(id = R.drawable.gables3),
+                            contentDescription = "ESP3",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
 
 
+                    }
                 }
+                DescriptionGables()
             }
-            DescriptionGables()
         }
-    }
 
+    }
 }
 
 
@@ -99,11 +105,11 @@ fun DescriptionGables() {
                 text = "The House of the Seven Gables (also known as the Turner House or Turner-Ingersoll Mansion) is a 1668 colonial mansion in Salem, Massachusetts, named for its gables. It was made famous by Nathaniel Hawthorne's 1851 novel The House of the Seven Gables."
 
             )
-            
+
         }
     }
-    
-    
+
+
 }
 
 
