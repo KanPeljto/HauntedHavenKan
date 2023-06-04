@@ -30,4 +30,6 @@ sealed class Screen(val route: String){
 
     object filteredCastles:Screen("filteredCastles")
 
+    object success:Screen("success")
+
 }

@@ -1,10 +1,12 @@
 package com.example.hauntedhaven.ui.theme
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.snapshots.SnapshotApplyResult
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hauntedhaven.Screen
+import com.example.hauntedhaven.SuccessfulPaymentPage
 import com.example.hauntedhaven.filteredScreens.ListingsPageCastles
 import com.example.hauntedhaven.filteredScreens.ListingsPageHotels
 import com.example.hauntedhaven.filteredScreens.ListingsPageHouses
@@ -83,6 +85,10 @@ fun SetupNavGraph(
 
         composable(route=Screen.filteredCastles.route){
             ListingsPageCastles(navController = navController)
+        }
+
+        composable(route=Screen.success.route){
+            SuccessfulPaymentPage(navController = navController)
         }
     }
 
