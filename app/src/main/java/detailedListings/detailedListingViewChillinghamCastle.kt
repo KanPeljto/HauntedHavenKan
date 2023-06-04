@@ -1,5 +1,6 @@
 package detailedListings
 
+import android.util.EventLogTags.Description
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,40 +32,55 @@ import com.example.hauntedhaven.ui.theme.PhantomBlack
 import com.example.hauntedhaven.ui.theme.TopBarDetailed
 
 @Composable
-fun DetailedLayoutChillinghamCastle(
+fun DetailedLayoutChillingham(
     navController: NavController
 ) {
-    LazyColumn(
-        modifier=Modifier.background(PhantomBlack)
-    ){
-        item {
-            TopBarDetailed(title = "Chilling", navController = navController)
-            LazyRow(){
-                item {
-                    Image(painter = painterResource(id = R.drawable.chillingham_castle_stormy_external_1442x760),
-                        contentDescription ="ESP",
-                    modifier= Modifier
-                        .size(400.dp)
-                        .background(PhantomBlack))
-                    
-                    Image(painter = painterResource(id = R.drawable.chillinghamcastle2) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
+    Box(
+        modifier = Modifier.background(PhantomBlack).fillMaxSize()
+    ) {
+        LazyColumn(
+            modifier = Modifier.background(PhantomBlack)
+        ) {
+            item {
+                TopBarDetailed(
+                    title = "Chillingham castle",
+                    navController = navController
+                )
+                LazyRow() {
 
-                    Image(painter = painterResource(id = R.drawable.chillingham3) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
-                    
+                    item {
+
+                        Image(
+                            painter = painterResource(id = R.drawable.chillingham3),
+                            contentDescription = "ESP",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
+
+                        Image(
+                            painter = painterResource(id = R.drawable.chillinghamcastle2),
+                            contentDescription = "ESP3",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
+
+                        Image(
+                            painter = painterResource(id = R.drawable.chillingham_castle_stormy_external_1442x760),
+                            contentDescription = "ESP3",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
+
+                    }
                 }
+                DescriptionChillinghamCastle()
             }
-            DescriptionChillinghamCastle()
         }
-    }
 
+    }
 }
 
 

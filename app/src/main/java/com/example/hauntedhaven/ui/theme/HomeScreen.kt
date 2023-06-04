@@ -98,7 +98,7 @@ fun GreetingSection() {
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.logohh2) ,
+            painter = painterResource(id = R.drawable.phatonhaven) ,
             contentDescription ="Logo",
 
         )

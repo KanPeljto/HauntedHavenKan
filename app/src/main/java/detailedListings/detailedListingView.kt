@@ -28,6 +28,7 @@ import com.example.hauntedhaven.R
 import com.example.hauntedhaven.Screen
 import com.example.hauntedhaven.ui.theme.GhostWhite
 import com.example.hauntedhaven.ui.theme.PhantomBlack
+import com.example.hauntedhaven.ui.theme.TopBarDetailed
 
 @Composable
 fun DetailedLayout(
@@ -37,21 +38,7 @@ fun DetailedLayout(
         modifier=Modifier.background(PhantomBlack)
     ){
         item {
-            Row(horizontalArrangement = Arrangement.SpaceBetween
-                ,modifier= Modifier
-                .background(PhantomBlack)
-                .fillMaxWidth()
-                ) {
-                Image(painter = painterResource(
-                    id = R.drawable.whitearrow2),
-                    contentDescription ="back",
-                modifier= Modifier
-                    .clickable { navController.navigate(Screen.ListingsPage.route) }
-                    .size(40.dp))
-
-                Image(painter = painterResource(id = R.drawable.logohh2), contentDescription ="logo")
-
-            }
+            TopBarDetailed(title = "Eastern state", navController = navController)
             LazyRow(){
                 item {
                     Image(painter = painterResource(id = R.drawable.eastern_state_penitentiary__philadelphia__pennsylvania_lccn2011632222_tif),
