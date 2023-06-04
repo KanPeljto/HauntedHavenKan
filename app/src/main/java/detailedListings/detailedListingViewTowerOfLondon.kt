@@ -28,56 +28,56 @@ import com.example.hauntedhaven.R
 import com.example.hauntedhaven.Screen
 import com.example.hauntedhaven.ui.theme.GhostWhite
 import com.example.hauntedhaven.ui.theme.PhantomBlack
+import com.example.hauntedhaven.ui.theme.TopBarDetailed
 
 @Composable
 fun DetailedLayoutTowerOfLondon(
     navController: NavController
 ) {
-    LazyColumn(
-        modifier=Modifier.background(PhantomBlack)
-    ){
-        item {
-            Row(horizontalArrangement = Arrangement.SpaceBetween
-                ,modifier= Modifier
-                .background(PhantomBlack)
-                .fillMaxWidth()
-                ) {
-                Image(painter = painterResource(
-                    id = R.drawable.whitearrow2),
-                    contentDescription ="back",
-                modifier= Modifier
-                    .clickable { navController.navigate(Screen.ListingsPage.route) }
-                    .size(40.dp))
+    Box(
+        modifier = Modifier.background(PhantomBlack).fillMaxSize()
+    ) {
+        LazyColumn(
+            modifier = Modifier.background(PhantomBlack)
+        ) {
+            item {
+                TopBarDetailed(
+                    title = "Tower of London",
+                    navController = navController
+                )
+                LazyRow() {
+                    item {
+                        Image(
+                            painter = painterResource(id = R.drawable.london2),
+                            contentDescription = "ESP",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
 
-                Image(painter = painterResource(id = R.drawable.logohh2), contentDescription ="logo")
+                        Image(
+                            painter = painterResource(id = R.drawable.london3),
+                            contentDescription = "ESP3",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
 
-            }
-            LazyRow(){
-                item {
-                    Image(painter = painterResource(id = R.drawable.london2),
-                        contentDescription ="ESP",
-                    modifier= Modifier
-                        .size(400.dp)
-                        .background(PhantomBlack))
-                    
-                    Image(painter = painterResource(id = R.drawable.london3) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
+                        Image(
+                            painter = painterResource(id = R.drawable.london4),
+                            contentDescription = "ESP3",
+                            modifier = Modifier
+                                .size(400.dp)
+                                .background(PhantomBlack)
+                        )
 
-                    Image(painter = painterResource(id = R.drawable.london4) ,
-                        contentDescription ="ESP3",
-                        modifier= Modifier
-                            .size(400.dp)
-                            .background(PhantomBlack))
-
+                    }
                 }
+                DescriptionTowerOfLondon()
             }
-            DescriptionTowerOfLondon()
         }
-    }
 
+    }
 }
 
 

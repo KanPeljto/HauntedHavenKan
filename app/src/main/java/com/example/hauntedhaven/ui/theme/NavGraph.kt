@@ -7,10 +7,8 @@ import androidx.navigation.compose.composable
 import com.example.hauntedhaven.Screen
 import detailedListings.DetailedLayout
 import detailedListings.DetailedLayoutChangi
-import detailedListings.DetailedLayoutChillinghamCastle
 import detailedListings.DetailedLayoutGables
 import detailedListings.DetailedLayoutLeapCastle
-import detailedListings.DetailedLayoutStAlbansHospital
 import detailedListings.DetailedLayoutStanleyHotel
 import detailedListings.DetailedLayoutTowerOfLondon
 
@@ -51,12 +49,7 @@ fun SetupNavGraph(
         composable(route=Screen.DetailedScreenStanleyHotel.route){
             DetailedLayoutStanleyHotel(navController = navController)
         }
-        composable(route=Screen.DetailedScreenAlbansHospital.route){
-            DetailedLayoutStAlbansHospital(navController = navController)
-        }
-        composable(route=Screen.DetailedScreenChillingham.route){
-            DetailedLayoutChillinghamCastle(navController = navController)
-        }
+        
         
 
 

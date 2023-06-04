@@ -28,6 +28,7 @@ import com.example.hauntedhaven.R
 import com.example.hauntedhaven.Screen
 import com.example.hauntedhaven.ui.theme.GhostWhite
 import com.example.hauntedhaven.ui.theme.PhantomBlack
+import com.example.hauntedhaven.ui.theme.TopBarDetailed
 
 @Composable
 fun DetailedLayoutLeapCastle(
@@ -37,22 +38,8 @@ fun DetailedLayoutLeapCastle(
         modifier=Modifier.background(PhantomBlack)
     ){
         item {
-            Row(horizontalArrangement = Arrangement.SpaceBetween
-                ,modifier= Modifier
-                .background(PhantomBlack)
-                .fillMaxWidth()
-                ) {
-                Image(painter = painterResource(
-                    id = R.drawable.whitearrow2
-                ),
-                    contentDescription ="back",
-                modifier= Modifier
-                    .clickable { navController.navigate(Screen.ListingsPage.route) }
-                    .size(40.dp))
+            TopBarDetailed(title = "Leap Castle", navController = navController)
 
-                Image(painter = painterResource(id = R.drawable.logohh2), contentDescription ="logo")
-
-            }
             LazyRow(){
                 item {
                     Image(painter = painterResource(id = R.drawable.leap_website),

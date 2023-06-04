@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -31,39 +32,51 @@ import com.example.hauntedhaven.ui.theme.PhantomBlack
 import com.example.hauntedhaven.ui.theme.TopBarDetailed
 
 @Composable
-fun DetailedLayoutGables(
+fun DetailedLayoutStanleyHotel(
     navController: NavController
 ) {
     LazyColumn(
-        modifier=Modifier.background(PhantomBlack)
+        modifier= Modifier.background(PhantomBlack)
     ){
         item {
-            TopBarDetailed(title = "Gables", navController = navController)
+            TopBarDetailed(title = "Stanley Hotel", navController = navController)
+            Row(horizontalArrangement = Arrangement.SpaceBetween
+                ,modifier= Modifier
+                    .background(PhantomBlack)
+                    .fillMaxWidth()
+            ) {
 
+                Text(text = ".")
+
+            }
             LazyRow(){
                 item {
-                    Image(painter = painterResource(id = R.drawable.llhouseof7gables_jpg),
+                    Image(painter = painterResource(id = R.drawable.stanleyhotel0915_maze_92ef1d5afd9445208830d68702895817),
                         contentDescription ="ESP",
-                    modifier= Modifier
-                        .size(400.dp)
-                        .background(PhantomBlack))
-                    
-                    Image(painter = painterResource(id = R.drawable.gables2) ,
+                        modifier= Modifier
+                            .size(400.dp)
+                            .background(PhantomBlack))
+
+                    Image(painter = painterResource(id = R.drawable.esp2) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-                    Image(painter = painterResource(id = R.drawable.gables3) ,
+                    Image(painter = painterResource(id = R.drawable.esp3) ,
                         contentDescription ="ESP3",
                         modifier= Modifier
                             .size(400.dp)
                             .background(PhantomBlack))
 
-
+                    Image(painter = painterResource(id = R.drawable.esp4) ,
+                        contentDescription ="ESP4",
+                        modifier= Modifier
+                            .size(400.dp)
+                            .background(PhantomBlack))
                 }
             }
-            DescriptionGables()
+            DescriptionOldStanley()
         }
     }
 
@@ -72,7 +85,7 @@ fun DetailedLayoutGables(
 
 
 @Composable
-fun DescriptionGables() {
+fun DescriptionOldStanley() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -88,7 +101,7 @@ fun DescriptionGables() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "Location: Massachusetts")
+                text = "Colorado, USA")
             Text(
                 fontFamily = FontFamily(Font(R.font.gothic)),
                 color = GhostWhite,
@@ -96,24 +109,13 @@ fun DescriptionGables() {
                 modifier = Modifier
                     .padding(start = 10.dp)
                     .padding(top = 10.dp),
-                text = "The House of the Seven Gables (also known as the Turner House or Turner-Ingersoll Mansion) is a 1668 colonial mansion in Salem, Massachusetts, named for its gables. It was made famous by Nathaniel Hawthorne's 1851 novel The House of the Seven Gables."
+                text = "The Stanley Hotel is a 140-room Colonial Revival hotel in Estes Park, Colorado, United States, about five miles from the entrance to Rocky Mountain National Park. It was built by Freelan Oscar Stanley, co-founder of the Stanley Motor Carriage Company. \n" +
+                        "\nThe Stanley Hotel is largely known for being one of the most haunted hotels in the United States, and served as the inspiration for the Overlook Hotel in Stephen King's 1977 bestselling novel The Shining and its 1980 film adaptation. It was also a filming location for the related 1997 TV miniseries. "
 
             )
-            
+
         }
     }
-    
-    
+
+
 }
-
-
-
-
-    
-
-
-
-
-
-
-
