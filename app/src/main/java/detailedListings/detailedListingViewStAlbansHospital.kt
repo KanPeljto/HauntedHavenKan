@@ -35,7 +35,7 @@ fun DetailedLayoutStAlbansHospital(
     navController: NavController
 ) {
     LazyColumn(
-        modifier=Modifier.background(PhantomBlack)
+        modifier=Modifier.background(PhantomBlack).fillMaxSize()
     ){
         item {
             TopBarDetailed(title = "Albans", navController = navController)

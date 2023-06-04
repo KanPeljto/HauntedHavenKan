@@ -5,11 +5,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hauntedhaven.Screen
+import com.example.hauntedhaven.filteredScreens.ListingsPageCastles
+import com.example.hauntedhaven.filteredScreens.ListingsPageHotels
+import com.example.hauntedhaven.filteredScreens.ListingsPageHouses
+import com.example.hauntedhaven.filteredScreens.ListingsPagePenitentiary
+import com.example.hauntedhaven.filteredScreens.ListingsPageSchool
 import detailedListings.DetailedLayout
 import detailedListings.DetailedLayoutChangi
 import detailedListings.DetailedLayoutChillingham
 import detailedListings.DetailedLayoutGables
 import detailedListings.DetailedLayoutLeapCastle
+import detailedListings.DetailedLayoutStAlbansHospital
 import detailedListings.DetailedLayoutStanleyHotel
 import detailedListings.DetailedLayoutTowerOfLondon
 
@@ -54,9 +60,30 @@ fun SetupNavGraph(
         composable(route=Screen.DetailedScreenChillingham.route){
             DetailedLayoutChillingham(navController = navController)
         }
+
+        composable(route=Screen.filteredPenitentiary.route){
+            ListingsPagePenitentiary(navController = navController)
+        }
+
+        composable(route=Screen.filteredSchools.route){
+            ListingsPageSchool(navController = navController)
+        }
         
+        composable(route=Screen.DetailedScreenAlbansHospital.route){
+            DetailedLayoutStAlbansHospital(navController = navController)
+        }
 
+        composable(route=Screen.filteredHotels.route){
+            ListingsPageHotels(navController = navController)
+        }
 
+        composable(route=Screen.filteredHouses.route){
+            ListingsPageHouses(navController = navController)
+        }
+
+        composable(route=Screen.filteredCastles.route){
+            ListingsPageCastles(navController = navController)
+        }
     }
 
     

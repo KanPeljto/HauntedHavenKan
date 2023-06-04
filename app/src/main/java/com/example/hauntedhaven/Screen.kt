@@ -19,4 +19,15 @@ sealed class Screen(val route: String){
     object DetailedScreenAlbansHospital:Screen("albans_hospital")
 
     object DetailedScreenChillingham:Screen("chillingham_castle")
+
+    object filteredPenitentiary:Screen("filteredPenitentiary")
+
+    object filteredSchools:Screen("filteredSchools")
+
+    object filteredHotels:Screen("filteredHotels")
+
+    object filteredHouses:Screen("filteredHouses")
+
+    object filteredCastles:Screen("filteredCastles")
+
 }

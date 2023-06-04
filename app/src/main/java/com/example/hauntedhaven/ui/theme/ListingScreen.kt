@@ -1,5 +1,6 @@
 package com.example.hauntedhaven.ui.theme
 
+import android.widget.Button
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -7,13 +8,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.IconButton
@@ -29,6 +35,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.hauntedhaven.R
@@ -59,6 +66,7 @@ fun ListingsPage(modifier: Modifier = Modifier, navController: NavController){
 
         ) {
             TopBar(title = "Listings", navController = navController)
+            HorizontalScroll(navController = navController)
             LazyColumn(modifier = Modifier.padding(horizontal = 17.dp)) {
                 items(listings) { listing ->
                     ListingItem(listing, navController = navController)
@@ -211,6 +219,52 @@ fun TopBarDetailed(
 }
 
 
+
+@Composable
+fun HorizontalScroll(modifier: Modifier = Modifier, navController: NavController){
+    LazyRow(){
+
+        item{
+            Button (onClick = { navController.navigate(Screen.ListingsPage.route) }, colors = ButtonDefaults.buttonColors(Color.Gray),
+            modifier = Modifier.padding(17.dp)) {
+                Text(text = "All", fontSize = 15.sp)
+            }
+            
+        }
+
+        
+        item{
+            Button (onClick = { navController.navigate(Screen.filteredPenitentiary.route) }, colors = ButtonDefaults.buttonColors(BloodRed),
+                    modifier = Modifier.padding(17.dp)) {
+                Text(text = "Penitentiary & Prisons", fontSize = 15.sp) }
+        }
+
+        item{
+            Button (onClick = { navController.navigate(Screen.filteredSchools.route) }, colors = ButtonDefaults.buttonColors(halloweenOrange),
+                modifier = Modifier.padding(17.dp)) {
+                Text(text = "Schools & Hospitals", fontSize = 15.sp)}
+        }
+
+        item{
+            Button (onClick = { navController.navigate(Screen.filteredHotels.route) }, colors = ButtonDefaults.buttonColors(Color.DarkGray),
+                modifier = Modifier.padding(17.dp)) {
+                Text(text = "Hotels", fontSize = 15.sp)}
+        }
+
+        item{
+            Button (onClick = { navController.navigate(Screen.filteredHouses.route) }, colors = ButtonDefaults.buttonColors(MoonlitViolet),
+                modifier = Modifier.padding(17.dp)) {
+                Text(text = "Houses", fontSize = 15.sp)}
+        }
+
+        item{
+            Button (onClick = { navController.navigate(Screen.filteredCastles.route) }, colors = ButtonDefaults.buttonColors(MistyGrey),
+                modifier = Modifier.padding(17.dp)) {
+                Text(text = "Castles & Mansions", fontSize = 15.sp)}
+        }
+        //    PENITENTIARY_PHANTOMS, SCHOOLS_HOSPITALS, HOTELS, HOUSES, CASTLES_MANSIONS
+    }
+}
 
 
 
