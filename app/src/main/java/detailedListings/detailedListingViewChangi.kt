@@ -42,7 +42,7 @@ fun DetailedLayoutChangi(
                 title = "Old Changi",
                 navController = navController
             )
-//comment to fix git
+//comment to fix github
             LazyRow(){
                 item {
                     Image(painter = painterResource(id = R.drawable.hauntedchangi_main),
