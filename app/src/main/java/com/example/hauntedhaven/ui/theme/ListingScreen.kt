@@ -40,7 +40,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.hauntedhaven.R
 import com.example.hauntedhaven.Screen
-
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 
 
 
@@ -265,6 +266,8 @@ fun HorizontalScroll(modifier: Modifier = Modifier, navController: NavController
         //    PENITENTIARY_PHANTOMS, SCHOOLS_HOSPITALS, HOTELS, HOUSES, CASTLES_MANSIONS
     }
 }
+
+
 
 
 

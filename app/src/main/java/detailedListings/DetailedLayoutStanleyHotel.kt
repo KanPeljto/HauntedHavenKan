@@ -150,6 +150,7 @@ fun DescriptionOldStanley(navController: NavController, modifier: Modifier = Mod
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(top = 10.dp, start = 10.dp)
             ) {
+
                 Button(onClick = { navController.navigate(Screen.success.route) }, modifier = Modifier.background(GhostWhite), colors = ButtonDefaults.buttonColors(
                     GhostWhite)) {
                     Text(text="Book now", color = PhantomBlack)
